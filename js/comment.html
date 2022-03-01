@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment</title>
+</head>
+
+<body>
+    <!-- akhane public er comment kibabe add kora jay sheta dekhano hocca-->
+    <h2>Add your comment, Please!!</h2>
+    <section>
+        <h4>Your comments</h4>
+        <div id="comment-section">
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, enim molestias rem incidunt earum
+                exercitationem.</p>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, enim molestias rem incidunt earum
+                exercitationem.</p>
+
+        </div>
+        <div>
+            <textarea name="" id="new-comment" cols="40" rows="4"></textarea><br><br>
+            <button id="submit-comment">Post</button>
+        </div>
+    </section>
+    <!-- JavaScript -->
+    <script>
+        // 1. add button even handler
+        document.getElementById('submit-comment').addEventListener('click', function () {
+            // 2. get user comment
+            const commentBox = document.getElementById('new-comment')
+            const userComment = commentBox.value;
+            // 3. create comment paragraph
+            const newCmment = document.createElement('p');
+            newCmment.innerText = userComment;
+            // 4. append the comment
+            const commentSection = document.getElementById('comment-section');
+            postMethod = commentSection.appendChild(newCmment);
+            // 5. clean the comment box
+            commentBox.value = '';
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment2</title>
+    <style>
+        body {
+            background-color: rgb(219, 152, 152);
+            ;
+            font-family: arial;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        textarea {
+            background-color: rgb(245, 194, 194);
+            ;
+            resize: none;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        button {
+            background-color: brown;
+            color: wheat;
+            border: none;
+            border: 2px solid black;
+            padding: 7px 25px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: rgb(133, 107, 107);
+            ;
+            color: black;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- How to add comment? Here it is in this html file -->
+    <h1>Create comment section</h1>
+    <section>
+        <h4>public's comment :</h4>
+        <div id="comment-section">
+            <p>Appreciate your way... may you success in the race of life.</p>
+            <p>How do you get the mouse pointer in android? And how did you managed to run these 2 devices in the
+                android?</p>
+        </div>
+        <div>
+            <textarea name="" id="comnt-bx" cols="40" rows="5" placeholder="Write a comment"></textarea><br><br>
+            <button id="submit-btn">Send</button>
+        </div>
+    </section>
+    <!-- Start javaScript -->
+    <script>
+        // 1. add button even handler
+        document.getElementById('submit-btn').addEventListener('click', function () {
+            // 2. get user comment
+            const commentBox = document.getElementById('comnt-bx');
+            const userComment = commentBox.value;
+            // 3. create comment paragraph
+            const newComment = document.createElement('p');
+            newComment.innerText = userComment;
+            // 4. append the comment
+            const commentSection = document.getElementById('comment-section');
+            commentSection.appendChild(newComment);
+            // 5. clean the comment box after send previous comment
+            commentBox.value = '';
+        })
+    </script>
+</body>
+
+</html>
