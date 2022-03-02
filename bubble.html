@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+    <style>
+        body {
+            font-family: arial;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Event Bubble</h2>
+    <section id="section-container">
+        <h4>Bubble list</h4>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum.</li>
+            <li id="second-item" class="item">Atque, sunt.</li>
+            <li class="item">Ab, laborum.</li>
+            <li class="item">Dicta, eligendi.</li>
+            <li class="item">In, distinctio?</li>
+            <li class="item">Natus, facilis.</li>
+        </ul>
+    </section>
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('second-item').addEventListener('click', function (event) {
+            console.log('second item clicked');
+            event.stopPropagation();
+        })
+        //ul
+        document.getElementById('list-container').addEventListener('click', function () {
+            console.log('ul item clicked')
+        })
+        //section
+        document.getElementById('section-container').addEventListener('click', function () {
+            console.log('section clicked')
+        })
+
+    </script>
+</body>
+
+</html>
