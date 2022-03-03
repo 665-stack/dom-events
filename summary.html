@@ -6,10 +6,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event summary</title>
+    <style>
+        h1,
+        h2 {
+            background-color: darkslateblue;
+            color: antiquewhite;
+            padding: 0px 0px 0px 15px;
+            border-radius: 4px;
+            font-family: Tahoma;
+            font-weight: 500;
+        }
+
+        button {
+            background-color: rebeccapurple;
+            color: antiquewhite;
+            border: none;
+            padding: 5px 15px 5px 15px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: rgb(69, 57, 82);
+        }
+
+        input {
+            background-color: plum;
+            padding: 5px 15px 5px 15px;
+            border: none;
+            border: 2px solid gray;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body>
+    <h1 id="mouse-header">Mouse move</h1>
+    <h2 id="mouse-enter">Mouse enter</h2>
+    <h2 id="mouse-out">Mouse out</h2>
 
+    <input id="email-field" type="email" placeholder="write you email">
+    <button onclick="handleClickBrown()">Click me: darkseagreen</button>
+    <!-- JavaScript -->
+    <script>
+        function handleClickBrown() {
+            document.body.style.backgroundColor = "darkseagreen"
+        };
+        document.getElementById('email-field').addEventListener('keyup', function (event) {
+            console.log(event.target.value);
+        });
+        // mouse move
+        document.getElementById('mouse-header').addEventListener('mousemove', function (event) {
+            console.log('mouse move')
+        })
+        //mouse enter
+        document.getElementById('mouse-enter').addEventListener('mouseenter', function (event) {
+            console.log("mouse enter")
+        });
+        //mouse out
+        document.getElementById('mouse-out').addEventListener('mouseout', function (event) {
+            console.log("mouse out")
+        });
+
+    </script>
 </body>
 
 </html>
